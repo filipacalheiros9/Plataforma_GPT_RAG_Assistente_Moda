@@ -1,4 +1,4 @@
-# UroBot Loja (Flask + ChromaDB + Ollama)
+# Assistente Moda (Flask + ChromaDB + Ollama)
 
 Projeto de assistente de moda com:
 - scraper de produtos da MO (`modalfa.py`)
