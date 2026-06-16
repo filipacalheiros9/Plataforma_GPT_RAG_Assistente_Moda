@@ -144,6 +144,37 @@ h2 {
     white-space: pre-line;
 }
 
+#resposta p {
+    margin: 0 0 12px;
+}
+
+.chat-image {
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.chat-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.chat-image figcaption {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+.arquitetura-wrap {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    padding: 0 24px;
+}
+
 .produtos-titulo {
     margin-bottom: 14px;
 }
@@ -224,6 +255,10 @@ footer {
     #chat {
         margin: 0 12px;
         padding: 16px;
+    }
+
+    .arquitetura-wrap {
+        padding: 0 12px;
     }
 
     .barra-pesquisa {

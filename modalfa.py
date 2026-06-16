@@ -52,7 +52,7 @@ for page in range(0, 10):
 
     print(f"A processar página {page+1}")
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, timeout=15)
     soup = BeautifulSoup(response.text, "html.parser")
 
     products = soup.find_all("div", class_="product-tile")
@@ -82,7 +82,7 @@ for page in range(0, 10):
 
         if link:
             try:
-                prod_response = requests.get(link, headers=headers)
+                prod_response = requests.get(link, headers=headers, timeout=15)
                 prod_soup = BeautifulSoup(prod_response.text, "html.parser")
 
                 title_tag = prod_soup.find("title")

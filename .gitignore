@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Flask
+instance/
+.webassets-cache/
+
+# Local databases / generated vector indexes
+db/
+produtos/db/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

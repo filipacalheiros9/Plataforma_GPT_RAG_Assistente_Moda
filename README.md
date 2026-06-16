@@ -2,9 +2,9 @@
 
 Projeto de assistente de moda com:
 - scraper de produtos da MO (`modalfa.py`)
-- indexacao vetorial em ChromaDB (`UroBot_produtos/init_database.py`)
-- API Flask para chat (`UroBot_produtos/UroBot_flask_app.py`)
-- frontend simples em HTML/CSS/JS (`UroBot_produtos/index.html`)
+- indexacao vetorial em ChromaDB (`produtos/init_database.py`)
+- API Flask para chat (`produtos/flask_app.py`)
+- frontend simples em HTML/CSS/JS (`produtos/index.html`)
 
 ## O que faz
 
@@ -26,11 +26,11 @@ TP2_B/
   modalfa.py
   dados.py
   README.md
-  UroBot_produtos/
+  produtos/
     index.html
     style.css
     script.js
-    UroBot_flask_app.py
+    flask_app.py
     init_database.py
     produtos_mo_final.csv
     marca.pdf
@@ -70,18 +70,18 @@ pip install flask flask-cors chromadb ollama pandas pypdf2 requests beautifulsou
 
 ### 1) Gerar CSV de produtos (opcional se ja existir)
 
-Para garantir que o CSV sai na pasta `UroBot_produtos`:
+Para garantir que o CSV sai na pasta `produtos`:
 
 ```powershell
-cd UroBot_produtos
+cd produtos
 python ..\modalfa.py
 ```
 
-Isto cria/atualiza `UroBot_produtos/produtos_mo_final.csv`.
+Isto cria/atualiza `produtos/produtos_mo_final.csv`.
 
 ### 2) Indexar CSV + PDFs no ChromaDB
 
-Ainda dentro de `UroBot_produtos`:
+Ainda dentro de `produtos`:
 
 ```powershell
 python init_database.py
@@ -91,17 +91,17 @@ python init_database.py
 
 ### 1) Iniciar backend Flask
 
-Dentro de `UroBot_produtos`:
+Dentro de `produtos`:
 
 ```powershell
-python UroBot_flask_app.py
+python flask_app.py
 ```
 
 API em: `http://127.0.0.1:5000/chat`
 
 ### 2) Abrir frontend
 
-Abrir `UroBot_produtos/index.html` no browser.
+Abrir `produtos/index.html` no browser.
 
 O frontend chama o backend em `http://127.0.0.1:5000/chat`.
 
@@ -116,6 +116,5 @@ curl -X POST http://127.0.0.1:5000/chat ^
 ## Notas
 
 - Se mudar CSV/PDFs, volta a correr `init_database.py`.
-- A pasta `UroBot_produtos/db` guarda a base vetorial persistente.
+- A pasta `produtos/db` guarda a base vetorial persistente.
 - `dados.py` e `produtos.csv` sao de outro scraper/dataset auxiliar e nao entram no fluxo principal do UroBot.
-
