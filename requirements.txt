@@ -1,0 +1,8 @@
+flask
+flask-cors
+chromadb
+ollama
+pandas
+PyPDF2
+requests
+beautifulsoup4

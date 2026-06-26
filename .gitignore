@@ -8,6 +8,10 @@ __pycache__/
 venv/
 env/
 
+# Codex/local assistant state
+.agents/
+.codex/
+
 # Flask
 instance/
 .webassets-cache/
@@ -25,6 +29,15 @@ produtos/db/
 *.log
 *.tmp
 *.temp
+
+# Local demo videos / recordings
+*.mp4
+*.mov
+*.mkv
+*.avi
+
+# Docker local overrides
+docker-compose.override.yml
 
 # OS / editor files
 .DS_Store

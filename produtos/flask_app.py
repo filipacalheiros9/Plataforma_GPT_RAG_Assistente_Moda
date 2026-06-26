@@ -1,5 +1,6 @@
+import os
 import re
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import chromadb
 import ollama
@@ -10,6 +11,22 @@ CORS(app)
 client = chromadb.PersistentClient(path="db")
 collection_produtos = client.get_or_create_collection(name="produtos")
 collection_documentos = client.get_or_create_collection(name="documentos")
+
+
+@app.route("/", methods=["GET"])
+def index():
+    return send_from_directory(".", "index.html")
+
+
+@app.route("/<path:filename>", methods=["GET"])
+def static_files(filename):
+    if filename in {"style.css", "script.js"}:
+        return send_from_directory(".", filename)
+
+    if filename == "arquitetura.png":
+        return send_from_directory("..", filename)
+
+    return ("Not found", 404)
 
 
 def extrair_preco_max(query):
@@ -226,4 +243,5 @@ def chat():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", "5000"))
+    app.run(host="0.0.0.0", port=port, debug=True)

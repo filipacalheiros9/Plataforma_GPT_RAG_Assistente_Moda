@@ -1,0 +1,11 @@
+.git
+.agents
+.codex
+**/.venv
+**/__pycache__
+**/*.pyc
+produtos/db
+*.mp4
+*.mov
+*.mkv
+*.avi
